@@ -2,10 +2,12 @@
   display: grid;
   grid-template-columns: 145px 1fr 1fr;
   grid-template-rows: 190px 1fr 1fr;
+  justify-items:center;
   grid-template-areas:
   "nav header header"
   "nav main bonus1"
   "nav main bonus2";
+  grid-column-gap: 25px;
 }
 .one{
   grid-row-start: 1;
@@ -13,6 +15,16 @@
   grid-column-start: 1;
   grid-column-end: 2;
   background-color: #3C382E;
+  width: 145px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+
+  display: grid;
+  grid-template-columns: .75fr 1.75fr;
+  grid-template-rows: repeat(13, 40px);
+  justify-items:center;
+  align-items: center;
 }
 .two{
   background-color: #91B0CA;
@@ -21,6 +33,14 @@
   grid-column-start: 2;
   grid-column-end: 4;
   height: 190px;
+  width:100%;
+  position: absolute;
+  left: 145px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+  "Title . . . . . UserInfo"
+  " SearchBar SearchBar  SearchBar . . . ."
 }
 .three{
   border-radius: 5px;
@@ -45,7 +65,70 @@
   height: 340px;
   position: relative;
   bottom: 40px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: .5fr 1.2fr .5fr;
 }
+.four .Header{
+  color: #4E5A63;
+  position: relative;
+  top: 15px;
+  left: 25px;
+}
+.four .Today{
+  font-weight: bold;
+  font-size: 22px;
+  position: relative;
+  right: 143px;
+  top: 40px;
+  grid-column: span 2;
+}
+.four .First{
+  font-weight: ;
+  font-family: Roboto sans-serif;
+  font-size: 24px;
+}
+.four .Second{
+  font-weight: ;
+  font-family: Roboto sans-serif;
+  font-size: 24px;
+}
+.four .Third{
+  font-weight: ;
+  font-family: Roboto sans-serif;
+  font-size: 24px;
+}
+.four .Bottom{
+  grid-column: span 3;
+}
+.four .BossLocation{
+  border: solid 2px black;
+grid-column-start: 3;
+grid-column-end: 4;
+}
+.four .First{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  align-items: center;
+  justify-items: center;
+}
+.four .Second{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  align-items: center;
+  justify-items: center;
+}
+.four .Third{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  align-items: center;
+  justify-items: center;
+}
+
 .five{
   border-radius: 5px;
   background: white;
@@ -60,4 +143,206 @@
 }
 body{
   background-color: #C3D4DE;
+}
+.Logo{
+background-image: url("../assets/LogoAssets/OpenBook.png");
+background-position: center;
+background-repeat: no-repeat;
+grid-column: span 2;
+grid-row: span 3;
+position: relative;
+top: 15px;
+}
+.Line{
+  background-image: url("../assets/Dashboard Icons/SpaceLine.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  grid-column: span 2;
+}
+.ItemListIcon{
+  background-image: url("../assets/Dashboard Icons/White/list.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+.VariablesIcon{
+  background-image: url("../assets/Dashboard Icons/White/sliders.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+.WorkersIcon{
+  background-image: url("../assets/Dashboard Icons/White/users.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+.MarketAuditIcon{
+  background-image: url("../assets/Dashboard Icons/White/grid.png");
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 3px;
+  top: 4px;
+}
+.MissingDataIcon{
+  background-image: url("../assets/Dashboard Icons/White/Inbox.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+.LogoutIcon{
+  background-image: url("../assets/Dashboard Icons/White/log-out.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+.ImportIcon{
+  background-image: url("../assets/Dashboard Icons/White/upload.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+.ExportIcon{
+  background-image: url("../assets/Dashboard Icons/White/download.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+.User{
+  grid-column: span 2;
+  position: relative;
+  right: 47px;
+  top: 9px;
+}
+h1{
+  font-size: 36px;
+  font-family: cursive;
+  color: white;
+}
+.two .Title{
+  grid-area: Title;
+  position: relative;
+  top: 31px;
+  left: 17px;
+}
+.two .UserInfo{
+  grid-area: UserInfo;
+}
+.two .SearchBar{
+  grid-area: SearchBar;
+  align-content: center;
+  display: grid;
+  grid-template-columns: 20px auto auto;
+  color: white;
+  font-size: 18px;
+  justify-content: flex-start;
+  grid-gap: 10px;
+  border-radius: 5px;
+  background-color: #5d7896;
+  width: minmax(200px, auto);
+  height: 29px;
+  position: relative;
+  left: 30px;
+
+}
+h3 {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+.two .SearchIcon{
+  position: relative;
+  left: 6px;
+}
+.two .UserInfo{
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  width: 200px;
+  position: relative;
+  bottom: 10px;
+}
+.four .BossSchedule{
+width: 190px;
+}
+.BossButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #a6827e;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #a6827e;
+	box-shadow:inset 0px 1px 0px 0px #a6827e;
+	background:-moz-linear-gradient(top, #3c382e 5%, #634b30 100%);
+	background:-webkit-linear-gradient(top, #3c382e 5%, #634b30 100%);
+	background:-o-linear-gradient(top, #3c382e 5%, #634b30 100%);
+	background:-ms-linear-gradient(top, #3c382e 5%, #634b30 100%);
+	background:linear-gradient(to bottom, #3c382e 5%, #634b30 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3c382e', endColorstr='#634b30',GradientType=0);
+	background-color:#3c382e;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #54381e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:18px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #4d3534;
+}
+.BossButton:hover {
+	background:-moz-linear-gradient(top, #634b30 5%, #3c382e 100%);
+	background:-webkit-linear-gradient(top, #634b30 5%, #3c382e 100%);
+	background:-o-linear-gradient(top, #634b30 5%, #3c382e 100%);
+	background:-ms-linear-gradient(top, #634b30 5%, #3c382e 100%);
+	background:linear-gradient(to bottom, #634b30 5%, #3c382e 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#634b30', endColorstr='#3c382e',GradientType=0);
+	background-color:#634b30;
+}
+.BossButton:active {
+	position:relative;
+	top:1px;
+}
+.four .Bottom{
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.BossButton{
+  margin: auto;
+}
+
+.five{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(7,auto);
+  justify-items: start;
+  align-items: center;
+}
+.five .Top{
+  grid-column: span 2;
+}
+.five .buttons{
+grid-column: span 2;
+  display: grid;
+  height: 100%;
+  grid-template-columns: auto auto;
+  width: 100%;
+}
+.five .Bullet{
+  justify-self:center;
+}
+.five .Top{
+  color: #4E5A63;
+  position: relative;
+  top: 5px;
+  left: 25px;
 }
